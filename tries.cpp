@@ -122,21 +122,55 @@ class Trie {
             gr << "]; " << endl;
             gr << "edge []; " << endl;
 
-            int nodeCount = getNodeCount();
+            [[maybe_unused]] int nodeCount = getNodeCount();
 
             // setting node info
-            for (int i = 0; i < nodeCount; i++) {
-                gr << "\"node" << i << "\" [ " << endl;
+
+            unordered_map<int, vector<int>> nodeLetters;
+            for (int i = 0; i < (int)(parentMap.size()); i++) {
+                TrieNode* p = parentMap[i].parent;
+                int j = parentMap[i].index;
+
+                int nodeId = nodeMap[p];
+                if (nodeLetters.count(nodeId) == 0) {
+                    vector<int> temp;
+                    nodeLetters[nodeId] = temp;
+                }
+                nodeLetters[nodeId].push_back(j);
+            }
+
+            for (auto it = nodeLetters.begin(); it != nodeLetters.end(); it++) {
+                int nodeID = it->first;
+                gr << "\"node" << nodeID << "\" [ " << endl;
                 gr << "label = \"";
 
-                for (int j = 0; j < 26; j += 2) {
-                    gr << "{" << "<f" << j << "> " << (char)(65 + j) << " | " << "<f" << j + 1 << "> " << (char)(65 + j + 1) << "}";
-                    if (j != 24)
-                        gr << " | ";
+                if (it->second.size() == 0) {
+                    gr << "<f0> NULL" << endl;
+                } else if (it->second.size() == 1) {
+                    gr << "{ <f" << it->second.back() << "> " << (char)(65 + it->second.back()) << " }";
+                } else {
+                    for (int j = 0; j < (int)(it->second.size()) - 1; j++) {
+                        int ch = it->second[j];
+                        gr << "{" << "<f" << ch << "> " << (char)(65 + ch) << " | ";
+                    }
+                    gr << "<f" << it->second.back() << "> " << (char)(65 + it->second.back()) << " }";
                 }
                 gr << "\"\nshape = \"record\"" << endl;
                 gr << "];" << endl; 
             }
+
+            // for (int i = 0; i < nodeCount; i++) {
+            //     gr << "\"node" << i << "\" [ " << endl;
+            //     gr << "label = \"";
+
+            //     for (int j = 0; j < 26; j += 2) {
+            //         gr << "{" << "<f" << j << "> " << (char)(65 + j) << " | " << "<f" << j + 1 << "> " << (char)(65 + j + 1) << "}";
+            //         if (j != 24)
+            //             gr << " | ";
+            //     }
+            //     gr << "\"\nshape = \"record\"" << endl;
+            //     gr << "];" << endl; 
+            // }
 
             // adding edges
             int id = 0;
@@ -150,7 +184,7 @@ class Trie {
 
                 cout << nodeP << "\t" << nodeC << "\t" << (char)(index + 65) << endl;
 
-                gr << "\"" << nodeP << "\":f" << index << " -> \"" << nodeC << "\":f" << index << " [ id = " << id++ << " ];\n";
+                gr << "\"" << nodeP << "\":f" << index << " -> \"" << nodeC << "\" [ id = " << id++ << " ];\n";
 
             }
             // for (auto it = parentMap.begin(); it != parentMap.end(); it++) {
