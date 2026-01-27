@@ -91,16 +91,19 @@ class Trie {
                     TrieNode* t = q.front();
                     reverseNodeMap[id] = t;
                     nodeMap[t] = id;
-                    id += 1;
                     
                     q.pop();
+                    bool children = false;
 
                     for (int j = 0; j < 26; j++) {
                         if (t->arr[j] != NULL) {
                             parentMap.push_back({t, t->arr[j], j});
                             q.push(t->arr[j]);
+                            children = true;
                         }
                     }
+                    if (children)
+                        id++;
                 }
             }
             return id;
@@ -123,9 +126,9 @@ class Trie {
             gr << "edge []; " << endl;
 
             [[maybe_unused]] int nodeCount = getNodeCount();
+            cout << nodeCount << endl;
 
             // setting node info
-
             unordered_map<int, vector<int>> nodeLetters;
             for (int i = 0; i < (int)(parentMap.size()); i++) {
                 TrieNode* p = parentMap[i].parent;
@@ -158,7 +161,11 @@ class Trie {
                 gr << "\"\nshape = \"record\"" << endl;
                 gr << "];" << endl; 
             }
-
+            gr << "\"node" << nodeCount << "\" [ " << endl;
+            gr << "label = \"";
+            gr << "{ <f0> NULL }" << endl;
+            gr << "\"\nshape = \"record\"" << endl;
+            gr << "];" << endl; 
             // for (int i = 0; i < nodeCount; i++) {
             //     gr << "\"node" << i << "\" [ " << endl;
             //     gr << "label = \"";
@@ -214,7 +221,8 @@ class Trie {
 
 
 int main() {
-    vector<string> words {"abcd", "abe"};
+    // vector<string> words {"abcd", "abe"};
+    vector<string> words {"aloof", "alohamora", "anger"};
 
     Trie* obj = new Trie();
     int length = words.size();
