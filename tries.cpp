@@ -222,7 +222,7 @@ class Trie {
 
 int main() {
     // vector<string> words {"abcd", "abe"};
-    vector<string> words {"aloof", "alohamora", "anger"};
+    vector<string> words {"aloof", "alohambra", "anger"};
 
     Trie* obj = new Trie();
     int length = words.size();

@@ -10,26 +10,77 @@ fontsize = "12"
 shape = "ellipse"
 ]; 
 edge []; 
+"node12" [ 
+label = "{ <f0> A }"
+shape = "record"
+];
+"node11" [ 
+label = "{ <f17> R }"
+shape = "record"
+];
+"node10" [ 
+label = "{ <f1> B }"
+shape = "record"
+];
+"node9" [ 
+label = "{ <f12> M }"
+shape = "record"
+];
+"node8" [ 
+label = "{ <f17> R }"
+shape = "record"
+];
+"node7" [ 
+label = "{ <f5> F }"
+shape = "record"
+];
+"node6" [ 
+label = "{ <f0> A }"
+shape = "record"
+];
+"node5" [ 
+label = "{ <f4> E }"
+shape = "record"
+];
+"node4" [ 
+label = "{<f7> H | <f14> O }"
+shape = "record"
+];
 "node3" [ 
-label = "{ <f3> D }"
+label = "{ <f6> G }"
 shape = "record"
 ];
 "node2" [ 
-label = "{<f2> C | <f4> E }"
+label = "{ <f14> O }"
 shape = "record"
 ];
 "node1" [ 
-label = "{ <f1> B }"
+label = "{<f11> L | <f13> N }"
 shape = "record"
 ];
 "node0" [ 
 label = "{ <f0> A }"
 shape = "record"
 ];
+"node13" [ 
+label = "{ <f0> NULL }
+"
+shape = "record"
+];
 "node0":f0 -> "node1" [ id = 0 ];
-"node1":f1 -> "node2" [ id = 1 ];
-"node2":f2 -> "node3" [ id = 2 ];
-"node2":f4 -> "node4" [ id = 3 ];
-"node3":f3 -> "node5" [ id = 4 ];
+"node1":f11 -> "node2" [ id = 1 ];
+"node1":f13 -> "node3" [ id = 2 ];
+"node2":f14 -> "node4" [ id = 3 ];
+"node3":f6 -> "node5" [ id = 4 ];
+"node4":f7 -> "node6" [ id = 5 ];
+"node4":f14 -> "node7" [ id = 6 ];
+"node5":f4 -> "node8" [ id = 7 ];
+"node6":f0 -> "node9" [ id = 8 ];
+"node7":f5 -> "node10" [ id = 9 ];
+"node8":f17 -> "node10" [ id = 10 ];
+"node9":f12 -> "node10" [ id = 11 ];
+"node10":f1 -> "node11" [ id = 12 ];
+"node11":f17 -> "node12" [ id = 13 ];
+"node12":f0 -> "node13" [ id = 14 ];
 
 }
