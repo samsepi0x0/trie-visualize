@@ -11,15 +11,15 @@ shape = "ellipse"
 ]; 
 edge []; 
 "node4" [ 
-label = "{<f4> E | <f4> E }"
+label = "{ <f4> E }"
 shape = "record"
 ];
 "node3" [ 
-label = "{<f3> D | <f3> D }"
+label = "{ <f3> D }"
 shape = "record"
 ];
 "node2" [ 
-label = "{<f2> C | <f2> C }"
+label = "{ <f2> C }"
 shape = "record"
 ];
 "node1" [ 

@@ -121,6 +121,8 @@ class Trie {
             // setting node info
             unordered_map<int, vector<int>> nodeLetters;
             for (int i = 0; i < (int)(parentMap.size()); i++) {
+                if (i != 0 && parentMap[i].index == parentMap[i-1].index)
+                    continue;
                 TrieNode* p = parentMap[i].parent;
                 int j = parentMap[i].index;
 
