@@ -1,0 +1,3 @@
+/home/samsepi/Documents/trie-visualize/build/CMakeFiles/tries.dir
+/home/samsepi/Documents/trie-visualize/build/CMakeFiles/edit_cache.dir
+/home/samsepi/Documents/trie-visualize/build/CMakeFiles/rebuild_cache.dir

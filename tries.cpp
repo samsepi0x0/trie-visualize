@@ -1,9 +1,6 @@
 /*
-    trie implementation successful,
-
+    Trie implementation, with a feeble attempt to visualize the it.
     Todo:
-    shrink nodes that are not being used
-        this needs major revamp as current data structure choice would not support this feature.
     animate the graph
         This will require generating a svg at each step after every node and edge gets added, and then convert the sequence of images to a gif using ffmpeg 
 */
@@ -38,7 +35,6 @@ class Trie {
         int wordCount = 0;
         unordered_map<TrieNode*, int> nodeMap;
         vector<Edge> parentMap;
-        unordered_map<int, TrieNode*> reverseNodeMap; // remove this, do not need this.
 
         Trie() {
             root = new TrieNode();
@@ -72,10 +68,6 @@ class Trie {
         }
 
         int getNodeCount() {
-            /*
-                Todo: find parent of each node, along with the index it points to. (parent, index) -> (child, index)
-                
-            */
             TrieNode* curr = root;
             queue<TrieNode*> q;
             q.push(curr);
@@ -89,7 +81,6 @@ class Trie {
                 int size = q.size();
                 for (int i = 0; i < size; i++) {
                     TrieNode* t = q.front();
-                    reverseNodeMap[id] = t;
                     nodeMap[t] = id++;
                     
                     q.pop();
@@ -160,25 +151,9 @@ class Trie {
                 gr << "\"\nshape = \"record\"" << endl;
                 gr << "];" << endl; 
             }
-            // gr << "\"node" << nodeCount << "\" [ " << endl;
-            // gr << "label = \"";
-            // gr << "{ <f0> NULL }" << endl;
-            // gr << "\"\nshape = \"record\"" << endl;
-            // gr << "];" << endl; 
+            
             gr << " \"NULL_NODE\" [label=\"END\", shape=box]; " << endl;
-            // for (int i = 0; i < nodeCount; i++) {
-            //     gr << "\"node" << i << "\" [ " << endl;
-            //     gr << "label = \"";
-
-            //     for (int j = 0; j < 26; j += 2) {
-            //         gr << "{" << "<f" << j << "> " << (char)(65 + j) << " | " << "<f" << j + 1 << "> " << (char)(65 + j + 1) << "}";
-            //         if (j != 24)
-            //             gr << " | ";
-            //     }
-            //     gr << "\"\nshape = \"record\"" << endl;
-            //     gr << "];" << endl; 
-            // }
-
+            
             // adding edges
             int id = 0;
             for (int i = 0; i < (int)parentMap.size(); i++) {
@@ -200,22 +175,7 @@ class Trie {
                 gr << "\"" << nodeP << "\":f" << index << " -> \"" << nodeC << "\" [ id = " << id++ << " ];\n";
 
             }
-            // for (auto it = parentMap.begin(); it != parentMap.end(); it++) {
-            //     TrieNode* parent = it->first;
-            //     TrieNode* child = it->second.first;
-            //     int value = it->second.second;
-
-            //     string nodeP = "node" + to_string(nodeMap[parent]);
-            //     string nodeC = "node" + to_string(nodeMap[child]);
-
-            //     gr << "\"" << nodeP << "\":" << "f" << value << " -> \"" << nodeC << "\":f" << value << "\n[ id = " << id << " ];" << endl;
-            //     cout << nodeP << "\t" << nodeC << "\t" << (char)(value + 65) << endl;
-            //     id++;
-            // }
-
             gr << "\n}";
-            
-
             gr.close();
         }
 
@@ -226,7 +186,6 @@ class Trie {
 };
 
 int main() {
-    // vector<string> words {"abcd", "abe"};
     vector<string> words {"abc", "abcd", "abcde"};
 
     Trie* obj = new Trie();
