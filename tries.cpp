@@ -90,20 +90,19 @@ class Trie {
                 for (int i = 0; i < size; i++) {
                     TrieNode* t = q.front();
                     reverseNodeMap[id] = t;
-                    nodeMap[t] = id;
+                    nodeMap[t] = id++;
                     
                     q.pop();
-                    bool children = false;
 
                     for (int j = 0; j < 26; j++) {
                         if (t->arr[j] != NULL) {
                             parentMap.push_back({t, t->arr[j], j});
+                            if (t->arr[j]->wordEnd) {
+                                parentMap.push_back({t, NULL, j});
+                            }
                             q.push(t->arr[j]);
-                            children = true;
                         }
                     }
-                    if (children)
-                        id++;
                 }
             }
             return id;
@@ -161,11 +160,12 @@ class Trie {
                 gr << "\"\nshape = \"record\"" << endl;
                 gr << "];" << endl; 
             }
-            gr << "\"node" << nodeCount << "\" [ " << endl;
-            gr << "label = \"";
-            gr << "{ <f0> NULL }" << endl;
-            gr << "\"\nshape = \"record\"" << endl;
-            gr << "];" << endl; 
+            // gr << "\"node" << nodeCount << "\" [ " << endl;
+            // gr << "label = \"";
+            // gr << "{ <f0> NULL }" << endl;
+            // gr << "\"\nshape = \"record\"" << endl;
+            // gr << "];" << endl; 
+            gr << " \"NULL_NODE\" [label=\"END\", shape=box]; " << endl;
             // for (int i = 0; i < nodeCount; i++) {
             //     gr << "\"node" << i << "\" [ " << endl;
             //     gr << "label = \"";
@@ -187,6 +187,12 @@ class Trie {
                 int index = parentMap[i].index;
 
                 string nodeP = "node" + to_string(nodeMap[p]);
+                if (c == NULL) {
+                    gr << "\"" << nodeP << "\":f" << index
+                        << " -> \"NULL_NODE\";\n";
+                    continue;
+                } 
+
                 string nodeC = "node" + to_string(nodeMap[c]);
 
                 cout << nodeP << "\t" << nodeC << "\t" << (char)(index + 65) << endl;
@@ -219,10 +225,9 @@ class Trie {
         }
 };
 
-
 int main() {
     // vector<string> words {"abcd", "abe"};
-    vector<string> words {"aloof", "alohambra", "anger"};
+    vector<string> words {"abc", "abcd", "abcde"};
 
     Trie* obj = new Trie();
     int length = words.size();
