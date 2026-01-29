@@ -1,0 +1,83 @@
+digraph g { 
+
+beautify = true;
+fontname="Helvetica,Arial,sans-serif" 
+node [fontname="Helvetica,Arial,sans-serif"] 
+edge [fontname="Helvetica,Arial,sans-serif"] 
+graph [nodesep=0.2, ranksep=0.4];
+graph [ rankdir = "TB" ]; 
+node [ 
+fontsize = "12"
+shape = "ellipse"
+]; 
+edge []; 
+"node10" [ 
+label = "{ <f0> A }"
+shape = "record"
+];
+"node9" [ 
+label = "{ <f7> H }"
+shape = "record"
+
+style = "filled"
+];
+"node8" [ 
+label = "{<f2> C | <f17> R }"
+shape = "record"
+
+style = "filled"
+];
+"node7" [ 
+label = "{ <f18> S }"
+shape = "record"
+];
+"node6" [ 
+label = "{ <f4> E }"
+shape = "record"
+];
+"node5" [ 
+label = "{ <f8> I }"
+shape = "record"
+];
+"node4" [ 
+label = "{ <f2> C }"
+shape = "record"
+];
+"node3" [ 
+label = "{ <f13> N }"
+shape = "record"
+];
+"node2" [ 
+label = "{ <f0> A }"
+shape = "record"
+];
+"node1" [ 
+label = "{ <f8> I }"
+shape = "record"
+];
+"node13" [ 
+label = "{ <f17> R }"
+shape = "record"
+
+style = "filled"
+];
+"node0" [ 
+label = "{<f5> F | <f17> R }"
+shape = "record"
+];
+"node0":f5 -> "node1" [ id = 0 ];
+"node0":f17 -> "node2" [ id = 1 ];
+"node1":f8 -> "node3" [ id = 2 ];
+"node2":f0 -> "node4" [ id = 3 ];
+"node3":f13 -> "node5" [ id = 4 ];
+"node4":f2 -> "node6" [ id = 5 ];
+"node5":f8 -> "node7" [ id = 6 ];
+"node6":f4 -> "node8" [ id = 7 ];
+"node7":f18 -> "node9" [ id = 8 ];
+"node8":f2 -> "node10" [ id = 9 ];
+"node8":f17 -> "node11" [ id = 10 ];
+"node9":f7 -> "node12" [ id = 11 ];
+"node10":f0 -> "node13" [ id = 12 ];
+"node13":f17 -> "node14" [ id = 13 ];
+
+}

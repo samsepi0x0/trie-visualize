@@ -13,6 +13,7 @@ edge [];
 "node4" [ 
 label = "{ <f4> E }"
 shape = "record"
+color = "green"
 ];
 "node3" [ 
 label = "{ <f3> D }"
