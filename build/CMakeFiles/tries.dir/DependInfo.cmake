@@ -8,7 +8,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
-  "/home/samsepi/Documents/trie-visualize/tries.cpp" "CMakeFiles/tries.dir/tries.cpp.o" "gcc" "CMakeFiles/tries.dir/tries.cpp.o.d"
+  "/home/samsepi/Documents/trie-visualize/src/tries.cpp" "CMakeFiles/tries.dir/src/tries.cpp.o" "gcc" "CMakeFiles/tries.dir/src/tries.cpp.o.d"
   "" "tries" "gcc" "CMakeFiles/tries.dir/link.d"
   )
 

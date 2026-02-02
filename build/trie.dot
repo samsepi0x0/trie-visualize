@@ -1,70 +1,150 @@
 digraph g { 
 
 beautify = true;
-fontname="Helvetica,Arial,sans-serif" 
-node [fontname="Helvetica,Arial,sans-serif"] 
-edge [fontname="Helvetica,Arial,sans-serif"] 
+fontname = "Helvetica, Arial, sans-serif"
+node [fontname = "Helvetica, Arial, sans-serif"] 
+edge [fontname = "Helvetica, Arial, sans-serif"] 
 graph [nodesep=0.2, ranksep=0.4];
-graph [ rankdir = "TB" ]; 
+graph [rankdir = "TB"]; 
 node [ 
-fontsize = "12"
-shape = "ellipse"
+	fontsize = "12"
+	shape = "ellipse"
 ]; 
 edge []; 
 "node10" [ 
-label = "{ <f0> A }"
-shape = "record"
-];
+	shape = "plaintext"
+	fontsize = "18"
+	label = <
+		<TABLE CELLPADDING="15" BORDER="1" CELLBORDER="2" CELLSPACING="5">
+		<TR>
+			<TD ALIGN="CENTER" VALIGN="MIDDLE" PORT = "f0"> A </TD>
+		</TR>
+		</TABLE>
+	>
+]
 "node9" [ 
-label = "{ <f7> H }"
-shape = "record"
-
-style = "filled"
-];
+	shape = "plaintext"
+	fontsize = "18"
+	label = <
+		<TABLE CELLPADDING="15" BORDER="1" CELLBORDER="2" CELLSPACING="5">
+		<TR>
+			<TD ALIGN="CENTER" VALIGN="MIDDLE" PORT = "f7"> H </TD>
+		</TR>
+		</TABLE>
+	>
+]
 "node8" [ 
-label = "{<f2> C | <f17> R }"
-shape = "record"
-
-style = "filled"
-];
+	shape = "plaintext"
+	fontsize = "18"
+	label = <
+		<TABLE CELLPADDING="15" BORDER="1" CELLBORDER="2" CELLSPACING="5">
+		<TR>
+			<TD ALIGN="CENTER" VALIGN="MIDDLE" PORT = "f2"> C </TD>
+			<TD ALIGN="CENTER" VALIGN="MIDDLE" PORT = "f17"> R </TD>
+		</TR>
+		</TABLE>
+	>
+]
 "node7" [ 
-label = "{ <f18> S }"
-shape = "record"
-];
+	shape = "plaintext"
+	fontsize = "18"
+	label = <
+		<TABLE CELLPADDING="15" BORDER="1" CELLBORDER="2" CELLSPACING="5">
+		<TR>
+			<TD ALIGN="CENTER" VALIGN="MIDDLE" PORT = "f18"> S </TD>
+		</TR>
+		</TABLE>
+	>
+]
 "node6" [ 
-label = "{ <f4> E }"
-shape = "record"
-];
+	shape = "plaintext"
+	fontsize = "18"
+	label = <
+		<TABLE CELLPADDING="15" BORDER="1" CELLBORDER="2" CELLSPACING="5">
+		<TR>
+			<TD ALIGN="CENTER" VALIGN="MIDDLE" PORT = "f4"> E </TD>
+		</TR>
+		</TABLE>
+	>
+]
 "node5" [ 
-label = "{ <f8> I }"
-shape = "record"
-];
+	shape = "plaintext"
+	fontsize = "18"
+	label = <
+		<TABLE CELLPADDING="15" BORDER="1" CELLBORDER="2" CELLSPACING="5">
+		<TR>
+			<TD ALIGN="CENTER" VALIGN="MIDDLE" PORT = "f8"> I </TD>
+		</TR>
+		</TABLE>
+	>
+]
 "node4" [ 
-label = "{ <f2> C }"
-shape = "record"
-];
+	shape = "plaintext"
+	fontsize = "18"
+	label = <
+		<TABLE CELLPADDING="15" BORDER="1" CELLBORDER="2" CELLSPACING="5">
+		<TR>
+			<TD ALIGN="CENTER" VALIGN="MIDDLE" PORT = "f2"> C </TD>
+		</TR>
+		</TABLE>
+	>
+]
 "node3" [ 
-label = "{ <f13> N }"
-shape = "record"
-];
+	shape = "plaintext"
+	fontsize = "18"
+	label = <
+		<TABLE CELLPADDING="15" BORDER="1" CELLBORDER="2" CELLSPACING="5">
+		<TR>
+			<TD ALIGN="CENTER" VALIGN="MIDDLE" PORT = "f13"> N </TD>
+		</TR>
+		</TABLE>
+	>
+]
 "node2" [ 
-label = "{ <f0> A }"
-shape = "record"
-];
+	shape = "plaintext"
+	fontsize = "18"
+	label = <
+		<TABLE CELLPADDING="15" BORDER="1" CELLBORDER="2" CELLSPACING="5">
+		<TR>
+			<TD ALIGN="CENTER" VALIGN="MIDDLE" PORT = "f0"> A </TD>
+		</TR>
+		</TABLE>
+	>
+]
 "node1" [ 
-label = "{ <f8> I }"
-shape = "record"
-];
+	shape = "plaintext"
+	fontsize = "18"
+	label = <
+		<TABLE CELLPADDING="15" BORDER="1" CELLBORDER="2" CELLSPACING="5">
+		<TR>
+			<TD ALIGN="CENTER" VALIGN="MIDDLE" PORT = "f8"> I </TD>
+		</TR>
+		</TABLE>
+	>
+]
 "node13" [ 
-label = "{ <f17> R }"
-shape = "record"
-
-style = "filled"
-];
+	shape = "plaintext"
+	fontsize = "18"
+	label = <
+		<TABLE CELLPADDING="15" BORDER="1" CELLBORDER="2" CELLSPACING="5">
+		<TR>
+			<TD ALIGN="CENTER" VALIGN="MIDDLE" PORT = "f17"> R </TD>
+		</TR>
+		</TABLE>
+	>
+]
 "node0" [ 
-label = "{<f5> F | <f17> R }"
-shape = "record"
-];
+	shape = "plaintext"
+	fontsize = "18"
+	label = <
+		<TABLE CELLPADDING="15" BORDER="1" CELLBORDER="2" CELLSPACING="5">
+		<TR>
+			<TD ALIGN="CENTER" VALIGN="MIDDLE" PORT = "f5"> F </TD>
+			<TD ALIGN="CENTER" VALIGN="MIDDLE" PORT = "f17"> R </TD>
+		</TR>
+		</TABLE>
+	>
+]
 "node0":f5 -> "node1" [ id = 0 ];
 "node0":f17 -> "node2" [ id = 1 ];
 "node1":f8 -> "node3" [ id = 2 ];
@@ -75,6 +155,9 @@ shape = "record"
 "node6":f4 -> "node8" [ id = 7 ];
 "node7":f18 -> "node9" [ id = 8 ];
 "node8":f2 -> "node10" [ id = 9 ];
-"node10":f0 -> "node13" [ id = 10 ];
+"node8":f17 -> "node11" [ id = 10 ];
+"node9":f7 -> "node12" [ id = 11 ];
+"node10":f0 -> "node13" [ id = 12 ];
+"node13":f17 -> "node14" [ id = 13 ];
 
 }

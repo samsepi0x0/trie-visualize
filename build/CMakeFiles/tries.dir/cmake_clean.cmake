@@ -1,7 +1,7 @@
 file(REMOVE_RECURSE
   "CMakeFiles/tries.dir/link.d"
-  "CMakeFiles/tries.dir/tries.cpp.o"
-  "CMakeFiles/tries.dir/tries.cpp.o.d"
+  "CMakeFiles/tries.dir/src/tries.cpp.o"
+  "CMakeFiles/tries.dir/src/tries.cpp.o.d"
   "tries"
   "tries.pdb"
 )

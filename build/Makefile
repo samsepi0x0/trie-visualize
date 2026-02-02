@@ -129,29 +129,29 @@ tries/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/tries.dir/build.make CMakeFiles/tries.dir/build
 .PHONY : tries/fast
 
-tries.o: tries.cpp.o
-.PHONY : tries.o
+src/tries.o: src/tries.cpp.o
+.PHONY : src/tries.o
 
 # target to build an object file
-tries.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/tries.dir/build.make CMakeFiles/tries.dir/tries.cpp.o
-.PHONY : tries.cpp.o
+src/tries.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/tries.dir/build.make CMakeFiles/tries.dir/src/tries.cpp.o
+.PHONY : src/tries.cpp.o
 
-tries.i: tries.cpp.i
-.PHONY : tries.i
+src/tries.i: src/tries.cpp.i
+.PHONY : src/tries.i
 
 # target to preprocess a source file
-tries.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/tries.dir/build.make CMakeFiles/tries.dir/tries.cpp.i
-.PHONY : tries.cpp.i
+src/tries.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/tries.dir/build.make CMakeFiles/tries.dir/src/tries.cpp.i
+.PHONY : src/tries.cpp.i
 
-tries.s: tries.cpp.s
-.PHONY : tries.s
+src/tries.s: src/tries.cpp.s
+.PHONY : src/tries.s
 
 # target to generate assembly for a file
-tries.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/tries.dir/build.make CMakeFiles/tries.dir/tries.cpp.s
-.PHONY : tries.cpp.s
+src/tries.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/tries.dir/build.make CMakeFiles/tries.dir/src/tries.cpp.s
+.PHONY : src/tries.cpp.s
 
 # Help Target
 help:
@@ -162,9 +162,9 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... tries"
-	@echo "... tries.o"
-	@echo "... tries.i"
-	@echo "... tries.s"
+	@echo "... src/tries.o"
+	@echo "... src/tries.i"
+	@echo "... src/tries.s"
 .PHONY : help
 
 

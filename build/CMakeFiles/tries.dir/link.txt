@@ -1,1 +1,1 @@
-/usr/bin/c++ -Wl,--dependency-file=CMakeFiles/tries.dir/link.d CMakeFiles/tries.dir/tries.cpp.o -o tries
+/usr/bin/c++ -Wl,--dependency-file=CMakeFiles/tries.dir/link.d CMakeFiles/tries.dir/src/tries.cpp.o -o tries

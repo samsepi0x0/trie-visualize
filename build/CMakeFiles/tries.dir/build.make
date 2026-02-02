@@ -72,28 +72,28 @@ include CMakeFiles/tries.dir/flags.make
 CMakeFiles/tries.dir/codegen:
 .PHONY : CMakeFiles/tries.dir/codegen
 
-CMakeFiles/tries.dir/tries.cpp.o: CMakeFiles/tries.dir/flags.make
-CMakeFiles/tries.dir/tries.cpp.o: /home/samsepi/Documents/trie-visualize/tries.cpp
-CMakeFiles/tries.dir/tries.cpp.o: CMakeFiles/tries.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/samsepi/Documents/trie-visualize/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/tries.dir/tries.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/tries.dir/tries.cpp.o -MF CMakeFiles/tries.dir/tries.cpp.o.d -o CMakeFiles/tries.dir/tries.cpp.o -c /home/samsepi/Documents/trie-visualize/tries.cpp
+CMakeFiles/tries.dir/src/tries.cpp.o: CMakeFiles/tries.dir/flags.make
+CMakeFiles/tries.dir/src/tries.cpp.o: /home/samsepi/Documents/trie-visualize/src/tries.cpp
+CMakeFiles/tries.dir/src/tries.cpp.o: CMakeFiles/tries.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/samsepi/Documents/trie-visualize/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/tries.dir/src/tries.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/tries.dir/src/tries.cpp.o -MF CMakeFiles/tries.dir/src/tries.cpp.o.d -o CMakeFiles/tries.dir/src/tries.cpp.o -c /home/samsepi/Documents/trie-visualize/src/tries.cpp
 
-CMakeFiles/tries.dir/tries.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/tries.dir/tries.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/samsepi/Documents/trie-visualize/tries.cpp > CMakeFiles/tries.dir/tries.cpp.i
+CMakeFiles/tries.dir/src/tries.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/tries.dir/src/tries.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/samsepi/Documents/trie-visualize/src/tries.cpp > CMakeFiles/tries.dir/src/tries.cpp.i
 
-CMakeFiles/tries.dir/tries.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/tries.dir/tries.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/samsepi/Documents/trie-visualize/tries.cpp -o CMakeFiles/tries.dir/tries.cpp.s
+CMakeFiles/tries.dir/src/tries.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/tries.dir/src/tries.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/samsepi/Documents/trie-visualize/src/tries.cpp -o CMakeFiles/tries.dir/src/tries.cpp.s
 
 # Object files for target tries
 tries_OBJECTS = \
-"CMakeFiles/tries.dir/tries.cpp.o"
+"CMakeFiles/tries.dir/src/tries.cpp.o"
 
 # External object files for target tries
 tries_EXTERNAL_OBJECTS =
 
-tries: CMakeFiles/tries.dir/tries.cpp.o
+tries: CMakeFiles/tries.dir/src/tries.cpp.o
 tries: CMakeFiles/tries.dir/build.make
 tries: CMakeFiles/tries.dir/compiler_depend.ts
 tries: CMakeFiles/tries.dir/link.txt
