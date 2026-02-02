@@ -1,6 +1,5 @@
 digraph g { 
 
-beautify = true;
 fontname = "Helvetica, Arial, sans-serif"
 node [fontname = "Helvetica, Arial, sans-serif"] 
 edge [fontname = "Helvetica, Arial, sans-serif"] 
@@ -13,9 +12,9 @@ node [
 edge []; 
 "node10" [ 
 	shape = "plaintext"
-	fontsize = "18"
+	fontsize = "16"
 	label = <
-		<TABLE CELLPADDING="15" BORDER="1" CELLBORDER="2" CELLSPACING="5">
+		<TABLE CELLPADDING="10" BORDER="1" CELLBORDER="2" CELLSPACING="5">
 		<TR>
 			<TD ALIGN="CENTER" VALIGN="MIDDLE" PORT = "f0"> A </TD>
 		</TR>
@@ -24,32 +23,32 @@ edge [];
 ]
 "node9" [ 
 	shape = "plaintext"
-	fontsize = "18"
+	fontsize = "16"
 	label = <
-		<TABLE CELLPADDING="15" BORDER="1" CELLBORDER="2" CELLSPACING="5">
+		<TABLE CELLPADDING="10" BORDER="1" CELLBORDER="2" CELLSPACING="5">
 		<TR>
-			<TD ALIGN="CENTER" VALIGN="MIDDLE" PORT = "f7"> H </TD>
+			<TD ALIGN="CENTER" VALIGN="MIDDLE" PORT = "f7" BGCOLOR="gray"> H </TD>
 		</TR>
 		</TABLE>
 	>
 ]
 "node8" [ 
 	shape = "plaintext"
-	fontsize = "18"
+	fontsize = "16"
 	label = <
-		<TABLE CELLPADDING="15" BORDER="1" CELLBORDER="2" CELLSPACING="5">
+		<TABLE CELLPADDING="10" BORDER="1" CELLBORDER="2" CELLSPACING="5">
 		<TR>
 			<TD ALIGN="CENTER" VALIGN="MIDDLE" PORT = "f2"> C </TD>
-			<TD ALIGN="CENTER" VALIGN="MIDDLE" PORT = "f17"> R </TD>
+			<TD ALIGN="CENTER" VALIGN="MIDDLE" PORT = "f17" BGCOLOR="gray"> R </TD>
 		</TR>
 		</TABLE>
 	>
 ]
 "node7" [ 
 	shape = "plaintext"
-	fontsize = "18"
+	fontsize = "16"
 	label = <
-		<TABLE CELLPADDING="15" BORDER="1" CELLBORDER="2" CELLSPACING="5">
+		<TABLE CELLPADDING="10" BORDER="1" CELLBORDER="2" CELLSPACING="5">
 		<TR>
 			<TD ALIGN="CENTER" VALIGN="MIDDLE" PORT = "f18"> S </TD>
 		</TR>
@@ -58,9 +57,9 @@ edge [];
 ]
 "node6" [ 
 	shape = "plaintext"
-	fontsize = "18"
+	fontsize = "16"
 	label = <
-		<TABLE CELLPADDING="15" BORDER="1" CELLBORDER="2" CELLSPACING="5">
+		<TABLE CELLPADDING="10" BORDER="1" CELLBORDER="2" CELLSPACING="5">
 		<TR>
 			<TD ALIGN="CENTER" VALIGN="MIDDLE" PORT = "f4"> E </TD>
 		</TR>
@@ -69,9 +68,9 @@ edge [];
 ]
 "node5" [ 
 	shape = "plaintext"
-	fontsize = "18"
+	fontsize = "16"
 	label = <
-		<TABLE CELLPADDING="15" BORDER="1" CELLBORDER="2" CELLSPACING="5">
+		<TABLE CELLPADDING="10" BORDER="1" CELLBORDER="2" CELLSPACING="5">
 		<TR>
 			<TD ALIGN="CENTER" VALIGN="MIDDLE" PORT = "f8"> I </TD>
 		</TR>
@@ -80,9 +79,9 @@ edge [];
 ]
 "node4" [ 
 	shape = "plaintext"
-	fontsize = "18"
+	fontsize = "16"
 	label = <
-		<TABLE CELLPADDING="15" BORDER="1" CELLBORDER="2" CELLSPACING="5">
+		<TABLE CELLPADDING="10" BORDER="1" CELLBORDER="2" CELLSPACING="5">
 		<TR>
 			<TD ALIGN="CENTER" VALIGN="MIDDLE" PORT = "f2"> C </TD>
 		</TR>
@@ -91,9 +90,9 @@ edge [];
 ]
 "node3" [ 
 	shape = "plaintext"
-	fontsize = "18"
+	fontsize = "16"
 	label = <
-		<TABLE CELLPADDING="15" BORDER="1" CELLBORDER="2" CELLSPACING="5">
+		<TABLE CELLPADDING="10" BORDER="1" CELLBORDER="2" CELLSPACING="5">
 		<TR>
 			<TD ALIGN="CENTER" VALIGN="MIDDLE" PORT = "f13"> N </TD>
 		</TR>
@@ -102,9 +101,9 @@ edge [];
 ]
 "node2" [ 
 	shape = "plaintext"
-	fontsize = "18"
+	fontsize = "16"
 	label = <
-		<TABLE CELLPADDING="15" BORDER="1" CELLBORDER="2" CELLSPACING="5">
+		<TABLE CELLPADDING="10" BORDER="1" CELLBORDER="2" CELLSPACING="5">
 		<TR>
 			<TD ALIGN="CENTER" VALIGN="MIDDLE" PORT = "f0"> A </TD>
 		</TR>
@@ -113,9 +112,9 @@ edge [];
 ]
 "node1" [ 
 	shape = "plaintext"
-	fontsize = "18"
+	fontsize = "16"
 	label = <
-		<TABLE CELLPADDING="15" BORDER="1" CELLBORDER="2" CELLSPACING="5">
+		<TABLE CELLPADDING="10" BORDER="1" CELLBORDER="2" CELLSPACING="5">
 		<TR>
 			<TD ALIGN="CENTER" VALIGN="MIDDLE" PORT = "f8"> I </TD>
 		</TR>
@@ -124,20 +123,20 @@ edge [];
 ]
 "node13" [ 
 	shape = "plaintext"
-	fontsize = "18"
+	fontsize = "16"
 	label = <
-		<TABLE CELLPADDING="15" BORDER="1" CELLBORDER="2" CELLSPACING="5">
+		<TABLE CELLPADDING="10" BORDER="1" CELLBORDER="2" CELLSPACING="5">
 		<TR>
-			<TD ALIGN="CENTER" VALIGN="MIDDLE" PORT = "f17"> R </TD>
+			<TD ALIGN="CENTER" VALIGN="MIDDLE" PORT = "f17" BGCOLOR="gray"> R </TD>
 		</TR>
 		</TABLE>
 	>
 ]
 "node0" [ 
 	shape = "plaintext"
-	fontsize = "18"
+	fontsize = "16"
 	label = <
-		<TABLE CELLPADDING="15" BORDER="1" CELLBORDER="2" CELLSPACING="5">
+		<TABLE CELLPADDING="10" BORDER="1" CELLBORDER="2" CELLSPACING="5">
 		<TR>
 			<TD ALIGN="CENTER" VALIGN="MIDDLE" PORT = "f5"> F </TD>
 			<TD ALIGN="CENTER" VALIGN="MIDDLE" PORT = "f17"> R </TD>
@@ -155,9 +154,6 @@ edge [];
 "node6":f4 -> "node8" [ id = 7 ];
 "node7":f18 -> "node9" [ id = 8 ];
 "node8":f2 -> "node10" [ id = 9 ];
-"node8":f17 -> "node11" [ id = 10 ];
-"node9":f7 -> "node12" [ id = 11 ];
-"node10":f0 -> "node13" [ id = 12 ];
-"node13":f17 -> "node14" [ id = 13 ];
+"node10":f0 -> "node13" [ id = 10 ];
 
 }
