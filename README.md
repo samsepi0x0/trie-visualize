@@ -11,7 +11,8 @@ An attempt at visualizing tries.
 
 ## Executing:
 
-Locate the trie vector locally before generating the svg.
+Locate the trie vector locally at `src/tries.cpp` before generating the svg.
+
 ```cpp
     vector<string> words {"abcde", "abc", "a"};
 
@@ -28,7 +29,13 @@ The dot file and svg generated in `build` folder.
 
 ## Output:
 
+### Words(1): harry
 ![Sample.svg](/sample-outputs/sample1.svg)
+
+
+### Words(3): a, abc, abcde
 ![Sample.svg](/sample-outputs/sample2.svg)
 
+
+### Words(4): godric, salazar, helga, rowena
 ![Sample.svg](/sample-outputs/sample3.svg)
