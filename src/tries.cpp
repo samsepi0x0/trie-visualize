@@ -1,11 +1,8 @@
-/*
-    Trie implementation, with a feeble attempt to visualize the it.
-    Todo:
-    animate the graph
-        This will require generating a svg at each step after every node and edge gets added, and then convert the sequence of images to a gif using ffmpeg 
-*/
-
-#include <bits/stdc++.h>
+#include <iostream>
+#include <vector>
+#include <unordered_map>
+#include <queue>
+#include <fstream>
 
 using namespace std;
 
@@ -76,7 +73,6 @@ class Trie {
             parentMap.clear();
             int id = 0;
 
-
             while (!q.empty()) {
                 int size = q.size();
                 for (int i = 0; i < size; i++) {
@@ -84,6 +80,7 @@ class Trie {
                     nodeMap[t] = id++;
                     
                     q.pop();
+                    bool children = false;
 
                     for (int j = 0; j < 26; j++) {
                         if (t->arr[j] != NULL) {
@@ -92,69 +89,80 @@ class Trie {
                                 parentMap.push_back({t, NULL, j});
                             }
                             q.push(t->arr[j]);
+                            children = true;
                         }
                     }
+
+                    if (!children)
+                        nodeMap[t] *= -1;
                 }
             }
             return id;
         }
 
         void generateDot() {
-            ofstream gr("tri.dot");
+            ofstream gr("trie.dot");
 
             gr << "digraph g { \n" << endl;
 
-            gr << "fontname=\"Helvetica,Arial,sans-serif\" " << endl;
-            gr << "node [fontname=\"Helvetica,Arial,sans-serif\"] " << endl;
-            gr << "edge [fontname=\"Helvetica,Arial,sans-serif\"] " << endl;
-            gr << "graph [nodesep=0.2, ranksep=0.4];\n";
-            gr << "graph [ rankdir = \"TB\" ]; " << endl; 
+            gr << "fontname = \"Helvetica, Arial, sans-serif\"" << endl;
+            gr << "node [fontname = \"Helvetica, Arial, sans-serif\"] " << endl;
+            gr << "edge [fontname = \"Helvetica, Arial, sans-serif\"] " << endl;
+            gr << "graph [nodesep=0.2, ranksep=0.4];" << endl;
+            gr << "graph [rankdir = \"TB\"]; " << endl; 
             gr << "node [ " << endl;
-            gr << "fontsize = \"12\"" << endl;
-            gr << "shape = \"ellipse\"" << endl;
+            gr << "\tfontsize = \"12\"" << endl;
+            gr << "\tshape = \"ellipse\"" << endl;
             gr << "]; " << endl;
             gr << "edge []; " << endl;
 
             [[maybe_unused]] int nodeCount = getNodeCount();
-            cout << nodeCount << endl;
 
             // setting node info
             unordered_map<int, vector<int>> nodeLetters;
-            for (int i = 0; i < (int)(parentMap.size()); i++) {
-                if (i != 0 && parentMap[i].index == parentMap[i-1].index)
-                    continue;
-                TrieNode* p = parentMap[i].parent;
-                int j = parentMap[i].index;
+            unordered_map<int, bool> endNode;
 
-                int nodeId = nodeMap[p];
-                if (nodeLetters.count(nodeId) == 0) {
+            for (int i = 0; i < (int)(parentMap.size()); i++) {
+                TrieNode* parent = parentMap[i].parent;
+                TrieNode* child = parentMap[i].child;
+                int index = parentMap[i].index;
+                int nodeID = nodeMap[parent];
+                
+                if (nodeLetters.count(nodeID) == 0) {
                     vector<int> temp;
-                    nodeLetters[nodeId] = temp;
+                    nodeLetters[nodeID] = temp;
                 }
-                nodeLetters[nodeId].push_back(j);
+                nodeLetters[nodeID].push_back(index);
             }
 
             for (auto it = nodeLetters.begin(); it != nodeLetters.end(); it++) {
                 int nodeID = it->first;
                 gr << "\"node" << nodeID << "\" [ " << endl;
-                gr << "label = \"";
-
-                if (it->second.size() == 0) {
-                    gr << "<f0> NULL" << endl;
-                } else if (it->second.size() == 1) {
-                    gr << "{ <f" << it->second.back() << "> " << (char)(65 + it->second.back()) << " }";
-                } else {
-                    for (int j = 0; j < (int)(it->second.size()) - 1; j++) {
-                        int ch = it->second[j];
-                        gr << "{" << "<f" << ch << "> " << (char)(65 + ch) << " | ";
+                gr << "\tshape = \"plaintext\"" << endl;
+                gr << "\tfontsize = \"16\"" << endl;
+                
+                gr << "\tlabel = <" << endl;
+                gr << "\t\t" << "<TABLE CELLPADDING=\"10\" BORDER=\"1\" CELLBORDER=\"2\" CELLSPACING=\"5\">" << endl;
+                gr << "\t\t<TR>" << endl;
+                
+                int n = (int)(it->second.size());
+                for (int i = 0; i < n; i++) {
+                    int j = it->second[i];
+                    gr << "\t\t\t<TD ALIGN=\"CENTER\" VALIGN=\"MIDDLE\" PORT = \"f" << abs(j) << "\"";
+                    if (i != n-1 && it->second[i] == it->second[i + 1]) {
+                        gr << " BGCOLOR=\"gray\"> ";
+                        i += 1;
+                    } else {
+                        gr << "> ";
                     }
-                    gr << "<f" << it->second.back() << "> " << (char)(65 + it->second.back()) << " }";
+                    gr << (char)(65 + j) << " </TD>" << endl;
                 }
-                gr << "\"\nshape = \"record\"" << endl;
-                gr << "];" << endl; 
+
+                gr << "\t\t</TR>" << endl << "\t\t</TABLE>" << endl;
+                gr << "\t>" << endl;
+
+                gr << "]" << endl;
             }
-            
-            gr << " \"NULL_NODE\" [label=\"END\", shape=box]; " << endl;
             
             // adding edges
             int id = 0;
@@ -164,15 +172,13 @@ class Trie {
                 int index = parentMap[i].index;
 
                 string nodeP = "node" + to_string(nodeMap[p]);
-                if (c == NULL) {
-                    gr << "\"" << nodeP << "\":f" << index
-                        << " -> \"NULL_NODE\";\n";
+                if (c == NULL || nodeMap[c] < 0) {
                     continue;
                 } 
 
                 string nodeC = "node" + to_string(nodeMap[c]);
 
-                cout << nodeP << "\t" << nodeC << "\t" << (char)(index + 65) << endl;
+                // cout << nodeP << "\t" << nodeC << "\t" << (char)(index + 65) << endl;
 
                 gr << "\"" << nodeP << "\":f" << index << " -> \"" << nodeC << "\" [ id = " << id++ << " ];\n";
 
@@ -182,16 +188,23 @@ class Trie {
         }
 
         void generateSVG() {
-            system("dot -Tsvg tri.dot -o trie.svg");
+            system("dot -Tsvg trie.dot -o trie.svg");
             cout << "SVG created." << endl;
         }
 };
 
 int main() {
-    vector<string> words {"abc", "abcd", "abcde"};
+    vector<string> words {"harry"};
 
     Trie* obj = new Trie();
+
     int length = words.size();
+
+    if (length == 0) {
+        cout << "Error: Cannot create empty trie diagram." << endl;
+        return 0;
+    }
+
     for (int i = 0; i < length; i++) {
         obj->insert(words[i]);
     }

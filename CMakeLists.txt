@@ -3,4 +3,4 @@ project(Trie_Visualize)
 
 set(CMAKE_CXX_STANDARD 14)
 
-add_executable(tries tries.cpp)
+add_executable(tries src/tries.cpp)
